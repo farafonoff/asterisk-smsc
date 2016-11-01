@@ -1,0 +1,9 @@
+[smsmorx]
+exten = _X.,1,SMS(${EXTEN},sa)
+exten = _X.,2,System(/etc/asterisk/smsc/morx.sh)
+exten = _X.,3,Hangup
+--
+
+[messages]
+exten => 1010,1,System(/etc/asterisk/smsc/motx.sh 1000 gigaset1 "${MESSAGE(body)}")
+
